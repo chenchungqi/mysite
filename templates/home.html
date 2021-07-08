@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title%}
+    我的网站|首页
+{% endblock %}
+
+{% block hearder_extends %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block nav_home_active %}active{% endblock %}
+
+{% block content%}
+    <div id="home_display">
+        {% if user.profile.Grades == 'A' %}
+            <div class="smileA" id="smile_img"></div>
+            <div class="gradesA" id="grades_img"></div>
+        {% elif user.profile.Grades == 'B' %}
+            <div class="smileB" id="smile_img"></div>
+            <div class="gradesB" id="grades_img"></div>
+        {% elif user.profile.Grades == 'C' %}
+            <div class="smileC" id="smile_img"></div>
+            <div class="gradesC" id="grades_img"></div>
+        {% elif user.profile.Grades == 'D' %}
+            <div class="smileD" id="smile_img"></div>
+            <div class="gradesD" id="grades_img"></div>
+        {% elif user.profile.Grades == 'E' %}
+            <div class="smileE" id="smile_img"></div>
+            <div class="gradesE" id="grades_img"></div>
+        {% else %}
+            <span>暂无评级</span>
+        {% endif %}
+        <div id="info_area">
+             <a href="{% url 'user_info' %}">
+                 <div class="individual_info"></div>
+             </a>
+            <a href="{% url 'group_info' %}">
+                <div class="group_info"></div>
+            </a>
+        </div>
+    </div>
+
+
+{#    <div class="hot-data">#}
+{#    <h3>今日热门点击</h3>#}
+{#    <ul>#}
+{#        {% for hot_data in today_hot_data %}#}
+{#            <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>#}
+{#                ({{ hot_data.read_num }})</li>#}
+{#        {% empty %}#}
+{#            <li>今天暂时没有热门博客</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    </div>#}
+{#    <div class="hot-data">#}
+{#    <h3>昨日热门点击</h3>#}
+{#    <ul>#}
+{#        {% for hot_data in yesterday_hot_data %}#}
+{#            <li><a href="{% url 'blog_detail' hot_data.content_object.pk %}">{{ hot_data.content_object.title }}</a>#}
+{#                ({{ hot_data.read_num }})</li>#}
+{#        {% empty %}#}
+{#            <li>昨天暂时没有热门博客</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    </div>#}
+{#    <div class="hot-data">#}
+{#    <h3>7天热门博客</h3>#}
+{#    <ul>#}
+{#        {% for hot_blog in hot_blogs_for_7_days %}#}
+{#            <li><a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>#}
+{#                ({{ hot_blog.read_num_sum }})</li>#}
+{#        {% empty %}#}
+{#            <li>近7天没有热门博客</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    </div>#}
+
+{% endblock %}

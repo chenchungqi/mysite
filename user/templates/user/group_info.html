@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    我的网站|班级情况
+{% endblock %}
+
+{% block hearder_extends %}
+    <link rel="stylesheet" href="{% static 'user_info.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div id="group_title"></div>
+    <div id="group_info_bg">
+        <div class="rank">
+            <div class="titlePart">
+                <span class="ball"></span><span class="titleA">每日复习正确率排行榜</span>
+                <table>
+                    <tr>
+                        <th>排名</th>
+                        <th>姓名</th>
+                        <th>复习正确率</th>
+                    </tr>
+                    <tr>
+                        <td>{{ user.profile.reviewCorrectRatesRank }}</td>
+                        <td>{{ user.profile.nickname }}</td>
+                        <td>{{ user.profile.reviewCorrectRates }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="rank">
+            <div class="titlePart">
+                <span class="ball2"></span><span class="titleA">每日成绩排行榜</span>
+                <table class="table_style">
+                    <tr>
+                        <th>排名</th>
+                        <th>姓名</th>
+                        <th>成绩</th>
+                    </tr>
+                    <tr>
+                        <td>{{ user.profile.dailyScoresRank }}</td>
+                        <td>{{ user.profile.nickname }}</td>
+                        <td>{{ user.profile.dailyScores }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="narrow">
+        <a href="{% url 'user_info' %}"><div class="up_page pull-left"></div></a>
+    </div>
+
+{% endblock %}
+

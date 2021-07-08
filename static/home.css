@@ -1,0 +1,84 @@
+
+div.hot-data {
+    text-align: center;
+    margin-top: 2em;
+}
+
+body {
+    background-image:url('/static/img/background.png');
+}
+
+div#home_display {
+    margin: 0 auto;
+    height: 25em;
+    min-width: 40em;
+}
+
+div #smile_img {
+    background-repeat:no-repeat;
+    height: 96px;
+    width: 103px;
+    margin: 0 auto;
+    background-size: 96px 103px;
+}
+div .smileA {
+    background-image:url('/static/img/Asmile.png');
+}
+div .smileB {
+    background-image:url('/static/img/Bsmile.png');
+}
+div .smileC {
+    background-image:url('/static/img/Csmile.png');
+}
+div .smileD {
+    background-image:url('/static/img/Dsmile.png');
+}
+div .smileE {
+    background-image:url('/static/img/Esmile.png');
+}
+
+div #grades_img {
+    background-repeat: no-repeat;
+    background-size: 409px 104px;
+    height: 104px;
+    width: 409px;
+    margin: 0 auto;
+}
+div .gradesA {
+    background-image: url('/static/img/Aclass.png');
+}
+div .gradesB {
+    background-image: url('/static/img/Bclass.png');
+}
+div .gradesC {
+    background-image: url('/static/img/Cclass.png');
+}
+div .gradesD {
+    background-image: url('/static/img/Dclass.png');
+}
+div .gradesE {
+    background-image: url('/static/img/Eclass.png');
+}
+
+div #info_area {
+    min-height: 100px;
+    width: 200px;
+    margin: 0px auto;
+}
+div .individual_info {
+    background-image:url('/static/img/individual.png');
+    background-repeat:no-repeat;
+    background-size:184px 49px;
+    height: 49px;
+    width: 184px;
+    margin-top: 15px;
+}
+
+div .group_info {
+    background-image:url('/static/img/group.png');
+    background-repeat:no-repeat;
+    background-size:184px 49px;
+    height: 49px;
+    width: 184px;
+    margin-top: 15px;
+}

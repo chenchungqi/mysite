@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    我的网站|个人情况
+{% endblock %}
+
+{% block hearder_extends %}
+    <link rel="stylesheet" href="{% static 'user_info.css' %}">
+    <script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <script src="https://cdn.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+    <script src="https://cdn.highcharts.com.cn/highcharts/modules/oldie.js"></script>
+    <script src="https://code.highcharts.com.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+{% endblock %}
+
+
+{% block content %}
+    <div id="page_title"></div>
+    <div id="user_info_bg">
+        <div id="daily_scores">
+            <div class="titlePart"><span class="ball"></span><span class="titleA">每日成绩：{{ user.profile.dailyScores }}</span></div>
+            <div id="graph"></div>
+        </div>
+        <div id="study_units">
+            <div class="titlePart"><span class="ball2"></span><span class="titleA">学习单元数：{{ user.profile.dailyUnitsNum }}</span></div>
+            <div id="graph2"></div>
+        </div>
+        <div id="study_situation">
+            <div class="titlePart"><span class="ball3"></span><span class="titleA">每日单元学习情况：</span></div>
+            <ul>
+                {% for eachinfo in studyInfo %}
+                    <li class="bold_font">{{ eachinfo|slice:":11" }}</li>
+                    <li class="txt">{{ eachinfo|slice:"11:" }}</li>
+{#                    {% for e in eachinfo %}#}
+{#                        <li>{{ e }}</li>#}
+{#                    {% endfor %}#}
+{#                    <li><a href="{% url 'blog_detail' hot_blog.id %}">{{ hot_blog.title }}</a>#}
+{#                        ({{ hot_blog.read_num_sum }})</li>#}
+                {% empty %}
+                    <li>暂无个人情况</li>
+                {% endfor %}
+            </ul>
+{#            <span class="bold_font">例如：</span>#}
+{#            <span class="txt">{{ user.profile.studyInfo }}</span>#}
+            <span class="bold_font">建议：</span>
+            <span class="txt">{{ user.profile.studySuggestion }}</span>
+        </div>
+    </div>
+    <div id="narrow">
+        <a href="{% url 'home' %}"><div class="up_page pull-left"></div></a>
+        <a href="{% url 'group_info' %}"><div class="down_page pull-right"></div></a>
+    </div>
+
+    <script>
+        // 图表配置
+     var chart = Highcharts.chart('graph', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: null
+        },
+        xAxis: {
+            categories: ['7月12', '7月13', '7月14', '7月15', '7月16']
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    // 开启数据标签
+                    enabled: true
+                },
+                // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '每日成绩',
+            data: {{ daily_scores_list }}
+        }]
+    });
+     var chart2 = Highcharts.chart('graph2', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: null
+        },
+        xAxis: {
+            categories: ['7月12', '7月13', '7月14', '7月15', '7月16']
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    // 开启数据标签
+                    enabled: true
+                },
+                // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: '每日学习单元数',
+            data: {{ daily_units_list }}
+        }]
+    });
+    </script>
+{% endblock %}
+

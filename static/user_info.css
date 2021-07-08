@@ -1,0 +1,144 @@
+body {
+    background-image:url('/static/img/background.png');
+}
+
+#page_title {
+    background-image:url('/static/img/individual.png');
+    background-repeat:no-repeat;
+    background-size:368px 98px;
+    height: 98px;
+    width: 368px;
+    margin: 15px auto;
+}
+
+#user_info_bg {
+    background-image:url('/static/img/user_info_bg.png');
+    background-repeat:no-repeat;
+    background-size:650px 1500px;
+    min-height: 1000px;
+    width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.titlePart {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+}
+.titleA {
+    font-family: 'Microsoft Sans Serif', Tahoma, Arial, Verdana, Sans-Serif;
+    font-size: 30px;
+    color: #8c8c8c;
+    margin-left: 20px;
+    line-height: 30px;
+}
+
+.ball {
+    background:#eea236;
+    display: inline-block;
+    width:30px;
+    height:30px;
+    border-radius:30px;
+    margin-left: 70px;
+}
+#graph {
+    margin: 30px auto;
+    width:400px;
+    height:300px
+}
+
+.ball2 {
+    background:#5bc0de;
+    display: inline-block;
+    width:30px;
+    height:30px;
+    border-radius:30px;
+    margin-left: 70px;
+}
+#graph2 {
+    margin: 30px auto;
+    width:400px;
+    height:300px
+}
+
+.ball3 {
+    background:#5cb85c;
+    display: inline-block;
+    width:30px;
+    height:30px;
+    border-radius:30px;
+    margin-left: 70px;
+}
+
+.bold_font {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 120px;
+}
+
+.txt {
+    font-size: 16px;
+    margin-left: 120px;
+}
+
+#narrow {
+    height: 60px;
+}
+
+.up_page {
+    background-image:url('/static/img/upnarrow.png');
+    background-size:155px 58px;
+    height: 58px;
+    width: 155px;
+}
+.down_page {
+    background-image:url('/static/img/downnarrow.png');
+    background-size:155px 58px;
+    height: 58px;
+    width: 155px;
+}
+
+#group_title {
+    background-image:url('/static/img/group.png');
+    background-repeat:no-repeat;
+    background-size:368px 98px;
+    height: 98px;
+    width: 368px;
+    margin: 15px auto;
+}
+#group_info_bg {
+    background-image:url('/static/img/group_info_bg.png');
+    background-repeat:no-repeat;
+    background-size:650px 700px;
+    min-height: 500px;
+    width: 650px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.rank {
+    height: 200px;
+}
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 30px auto;
+}
+
+th {
+    height: 30px;
+}
+
+.info_title {
+    text-align: center;
+}
+
+.info_content{
+    text-align: center;
+}
